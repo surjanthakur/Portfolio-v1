@@ -40,7 +40,7 @@ export default function HeroPage() {
         <img
           src="https://i.pinimg.com/1200x/bd/90/a6/bd90a6c8ea07dc7390e461b655a8b1c6.jpg"
           alt="background"
-          className="h-full w-full object-cover opacity-20"
+          className="h-full w-full object-cover opacity-15"
         />
         {/* RANDOM QUOTE */}
         <div className="absolute bottom-18! left-4! right-4! mx-auto! max-w-2xl! text-center px-6! py-5!">
@@ -71,7 +71,7 @@ export default function HeroPage() {
       </div>
 
       {/* ================= INFO SECTION ================= */}
-      <div className="mt-20! px-6!">
+      <div className="mt-10! px-6!">
         {/* NAME */}
         <div className="flex items-center gap-2">
           <h1 className="text-xl font-semibold">Surjan Thakur</h1>
@@ -89,8 +89,17 @@ export default function HeroPage() {
         {/* ABOUT */}
         <div className="mt-4! p-4">
           <p className="text-lg text-gray-300 leading-relaxed">
-            Hey. I’m Surjan Thakur. I build things, break them, then build again
-            — cleaner, sharper, wiser. Code is my craft. Curiosity is my fuel.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque iste
+            eveniet placeat sequi veritatis nam, debitis similique nostrum
+            dolores? Deserunt, laudantium nesciunt? Quia suscipit soluta
+            incidunt aperiam quo iure quibusdam. Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Vero impedit eius neque quia nulla
+            quos laudantium, eum pariatur alias rerum reprehenderit nesciunt est
+            magni atque suscipit dolores ad. Obcaecati, fugit? Lorem, ipsum
+            dolor sit amet consectetur adipisicing elit. Magni, omnis quas
+            pariatur delectus ipsa laboriosam soluta recusandae molestiae,
+            maxime placeat, eaque unde debitis sit! Sit optio fuga magni
+            accusantium quia?
           </p>
         </div>
       </div>
