@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import profileImg from "../../../images/myimage2.png";
+import profileImg from "../../../images/myimage.png";
 import "./heropage.css";
 
 export default function HeroPage() {
@@ -63,9 +63,8 @@ export default function HeroPage() {
 
         {/* CONTACT BUTTON */}
         <div className="flex justify-end mr-2! mt-2!">
-          <button className="contact-btn text-center">
-            contact&nbsp;&nbsp;
-            <i className="fi fi-ss-rocket-lunch text-white"></i>
+          <button className="contact-btn text-center px-2! py-2!">
+            <i class="fi fi-rs-paper-plane"></i> Get in Touch
           </button>
         </div>
       </div>
