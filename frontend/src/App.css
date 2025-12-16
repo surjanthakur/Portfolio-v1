@@ -1,0 +1,33 @@
+@import 'tailwindcss';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+  font-family: 'Playfair Display', serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.main-container {
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+  border: 1px dotted rgb(154, 216, 255);
+  height: 100vh;
+  margin: 0 auto; /* left-right center */
+  width: 768px;
+  max-width: 100%;
+}
+
+/* phone screens */
+@media (max-width: 640px) {
+  .main-container {
+    width: 100%;
+  }
+}
