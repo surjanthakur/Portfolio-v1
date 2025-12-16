@@ -6,15 +6,14 @@ export default function HeroPage() {
 
   useEffect(() => {
     const getRandomQuotes = async () => {
-      await axios
-        .get("https://type.fit/api/quotes")
-        .then(res => {
-          setQuotes(res.data);
-        })
-        .catch(err => {
-          console.log(`error while fetching random quotes: ${err}`);
-        });
+      try {
+        const response = await axios.get("https://type.fit/api/quotes");
+        if (response) setQuotes(response.data);
+      } catch (err) {
+        console.error("Error while fetching random quotes:", err);
+      }
     };
+    getRandomQuotes();
   }, []);
   return (
     <div className="container">
