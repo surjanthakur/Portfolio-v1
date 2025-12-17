@@ -1,5 +1,5 @@
 import "./App.css";
-import { HeroPage, NavBar, Footer } from "./components/index";
+import { HeroPage, Footer } from "./components/index";
 
 function App() {
   return (
@@ -7,7 +7,6 @@ function App() {
       {/* main layout structure */}
       <div className="main-container">
         <HeroPage />
-        <NavBar />
         <Footer />
       </div>
     </>
