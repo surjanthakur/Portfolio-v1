@@ -92,9 +92,11 @@ export default function HeroPage() {
         <div className="mt-10! px-6!">
           {/* NAME */}
           <section className="flex items-center gap-2">
-            <h1 className="text-4xl font-semibold">Surjan Thakur</h1>
+            <h1 className="text-4xl font-extrabold text-gray-400">
+              Surjan Thakur
+            </h1>
             <button className="work-status">
-              {/* <span>Open for Work</span>  */}
+              <span className="text-lg!">👻</span>
             </button>
           </section>
           {/* META */}
