@@ -1,5 +1,5 @@
 import "./App.css";
-import { HeroPage, NavBar, StreakStatus } from "./components/index";
+import { HeroPage, NavBar, StreakStatus, Footer } from "./components/index";
 
 function App() {
   return (
@@ -8,6 +8,7 @@ function App() {
         <HeroPage />
         <StreakStatus />
         <NavBar />
+        <Footer />
       </div>
     </>
   );
