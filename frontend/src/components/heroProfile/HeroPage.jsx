@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import profileImg from "../../../images/myimage.png";
 import "./heropage.css";
 import { StreakStatus, InfiniteScroll } from "../index";
+import { Link } from "react-router-dom";
 
 export default function HeroPage() {
   const [quotes, setQuotes] = useState([]);
@@ -67,7 +68,7 @@ export default function HeroPage() {
         </div>
 
         {/* ================= PROFILE ROW ================= */}
-        <div className="relative px-6">
+        <div className="relative px-6!">
           {/* PROFILE IMAGE */}
           <div className="absolute -top-16 left-6">
             <img
@@ -100,11 +101,19 @@ export default function HeroPage() {
             </button>
           </section>
           {/* META */}
-          <section className="flex text-sm! text-gray-500">
-            <span className="text-2xl">
+          <section className="flex flex-row gap-4 text-lg">
+            <span>
               <i className="fi fi-rs-land-layer-location"></i>
               &nbsp;India
             </span>
+            <Link className="icon-content" to="https://x.com/tsurjan16">
+              <i className="fa-brands fa-x-twitter text-blue-400"></i>
+              <div className="tooltip">x</div>
+            </Link>
+            <Link className="icon-content" to="https://github.com/surjanthakur">
+              <i className="fa-brands fa-github text-blue-400"></i>
+              <div className="tooltip">Github</div>
+            </Link>
           </section>
           {/* ABOUT ----------------------------------------------------------------->*/}
           <section className="mt-4! p-4">
