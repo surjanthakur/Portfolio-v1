@@ -1,0 +1,76 @@
+.example-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.example-1 .icon-content {
+  position: relative;
+}
+
+/* ICON CONTAINER */
+.example-1 .icon-content .link {
+  width: 56px;
+  height: 56px;
+  background: #ffffff;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4d4d4d;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* ICON SIZE */
+.example-1 .icon-content .link i {
+  font-size: 24px;
+}
+
+/* HOVER EFFECT */
+.example-1 .icon-content .link:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* TOOLTIP */
+.example-1 .icon-content .tooltip {
+  position: absolute;
+  top: -38px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #000;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  opacity: 0;
+  visibility: hidden;
+  white-space: nowrap;
+  transition: all 0.25s ease;
+}
+
+.example-1 .icon-content:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  top: -52px;
+}
+
+/* INDIVIDUAL HOVER COLORS */
+.example-1 .icon-content .link[data-social="Home"]:hover {
+  color: #22c55e;
+}
+
+.example-1 .icon-content .link[data-social="Github"]:hover {
+  color: #000;
+}
+
+.example-1 .icon-content .link[data-social="x"]:hover {
+  color: #1d9bf0;
+}
+
+.example-1 .icon-content .link[data-social="Sun"]:hover {
+  color: #f59e0b;
+}
