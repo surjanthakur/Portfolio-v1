@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 export default function HeroPage() {
   const [quotes, setQuotes] = useState([]);
 
-  // send mail
+  // email logic
   const openMail = () => {
     const myEmail = "tsurjan506@gmail.com";
     const subject = "Contact from Portfolio";
