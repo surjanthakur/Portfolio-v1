@@ -1,59 +1,86 @@
+/* =========================
+   Infinite Scroll Container
+   ========================= */
 .infinite-container {
-  margin-top: 4rem;
+  margin-top: 2.5rem;
   width: 100%;
   overflow: hidden;
-  background-color: rgb(0, 0, 0);
-  padding: 1rem 0;
-}
-.infinite-container:hover .infinite-track {
-  animation-play-state: paused;
+  padding: 0.75rem 0;
 }
 
-.card {
-  flex: 0 0 auto;
-  max-width: max-content;
-  max-height: max-content;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  border-radius: 12px;
-  margin-top: 0 1;
-  margin-right: 1rem;
-  padding: 10px;
+/* Pause on hover (desktop luxury) */
+@media (hover: hover) {
+  .infinite-container:hover .infinite-track {
+    animation-play-state: paused;
+  }
 }
+
+/* =========================
+   Track
+   ========================= */
 
 .infinite-track {
   display: flex;
   width: max-content;
   min-width: min-content;
-  animation: scroll 10s linear infinite;
+  gap: 0.75rem;
+  animation: scroll 14s linear infinite;
 }
+
+/* Slower & tighter on mobile */
+@media (max-width: 640px) {
+  .infinite-track {
+    animation-duration: 20s;
+  }
+}
+
+/* =========================
+   Cards
+   ========================= */
+
+.card {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  border-radius: 12px;
+  padding: 0.5rem;
+  white-space: nowrap;
+}
+
+/* =========================
+   Keyframes
+   ========================= */
 
 @keyframes scroll {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-20%);
+    transform: translateX(-35%);
   }
 }
 
-/** tech-btn */
-/* From Uiverse.io by Allyhere */
+/* =========================
+   Tech Button (Responsive)
+   ========================= */
+
 .tech-btn {
   --clr-font-main: hsla(0 0% 20% / 100);
   --btn-bg-1: hsla(194 100% 69% / 1);
   --btn-bg-2: hsla(217 100% 56% / 1);
   --btn-bg-color: hsla(360 100% 100% / 1);
-  --radii: 0.8rem;
+  --radii: 0.75rem;
+
   cursor: pointer;
-  padding: 0.5em 1.2em;
-  min-width: 120px;
-  min-height: 44px;
-  font-size: var(--size, 1rem);
+  padding: 0.45em 1em;
+  min-width: 96px;
+  min-height: 40px;
+  font-size: 0.85rem;
   font-weight: 500;
-  transition: 0.8s;
+
+  transition: background-position 0.8s ease, box-shadow 0.3s ease;
   background-size: 280% auto;
   background-image: linear-gradient(
     325deg,
@@ -61,26 +88,39 @@
     var(--btn-bg-1) 55%,
     var(--btn-bg-2) 90%
   );
+
   border: none;
   border-radius: var(--radii);
   color: var(--btn-bg-color);
-  box-shadow: 0px 0px 20px rgba(71, 184, 255, 0.5),
-    0px 5px 5px -1px rgba(58, 125, 233, 0.25),
-    inset 4px 4px 8px rgba(175, 230, 255, 0.5),
-    inset -4px -4px 8px rgba(19, 95, 216, 0.35);
+
+  box-shadow: 0 0 14px rgba(71, 184, 255, 0.45),
+    0 4px 4px -1px rgba(58, 125, 233, 0.25),
+    inset 3px 3px 6px rgba(175, 230, 255, 0.45),
+    inset -3px -3px 6px rgba(19, 95, 216, 0.3);
 }
 
-.tech-btn:hover {
-  background-position: right top;
+/* Desktop hover */
+@media (hover: hover) {
+  .tech-btn:hover {
+    background-position: right top;
+  }
 }
 
 .tech-btn:is(:focus, :focus-visible, :active) {
   outline: none;
-  box-shadow: 0 0 0 3px var(--btn-bg-color), 0 0 0 6px var(--btn-bg-2);
+  box-shadow: 0 0 0 2px var(--btn-bg-color), 0 0 0 4px var(--btn-bg-2);
 }
 
+/* =========================
+   Reduced Motion
+   ========================= */
+
 @media (prefers-reduced-motion: reduce) {
+  .infinite-track {
+    animation: none;
+  }
+
   .tech-btn {
-    transition: linear;
+    transition: none;
   }
 }
