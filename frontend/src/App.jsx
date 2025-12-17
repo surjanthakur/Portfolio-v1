@@ -1,5 +1,11 @@
 import "./App.css";
-import { HeroPage, NavBar, StreakStatus, Footer } from "./components/index";
+import {
+  HeroPage,
+  NavBar,
+  StreakStatus,
+  Footer,
+  InfiniteScroll,
+} from "./components/index";
 
 function App() {
   return (
@@ -7,7 +13,7 @@ function App() {
       <div className="main-container">
         <HeroPage />
         <StreakStatus />
-        <NavBar />
+        <InfiniteScroll />
         <Footer />
       </div>
     </>
