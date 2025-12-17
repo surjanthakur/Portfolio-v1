@@ -60,8 +60,8 @@ export default function HeroPage() {
             className="h-full w-full object-cover opacity-25"
           />
           {/* RANDOM QUOTE */}
-          <div className="absolute bottom-18! left-4! right-4! mx-auto! max-w-2xl! text-center px-6! py-5!">
-            <p className="text-lg md:text-xl font-serif italic text-gray-100 leading-relaxed">
+          <div className="absolute bottom-14! left-3! right-3! mx-auto max-w-2xl text-center px-3! py-3! sm:px-6! sm:py-5!">
+            <p className="text-base sm:text-lg! md:text-xl! font-serif italic text-gray-100 leading-relaxed">
               {quotes?.quote}
             </p>
           </div>
@@ -70,11 +70,11 @@ export default function HeroPage() {
         {/* ================= PROFILE ROW ================= */}
         <div className="relative px-6!">
           {/* PROFILE IMAGE */}
-          <div className="absolute -top-16 left-6">
+          <div className="absolute -top-12! sm:-top-16! left-4 sm:left-6!">
             <img
               src={profileImg}
               alt="profile"
-              className="h-36 w-36 rounded-full border-4 border-black"
+              className="h-24 w-24 sm:h-36! sm:w-36! rounded-full border-4! border-black"
             />
           </div>
 
@@ -82,26 +82,25 @@ export default function HeroPage() {
           <div className="flex justify-end mr-2! mt-2!">
             <button
               onClick={openMail}
-              className="contact-btn text-center px-2! py-2!"
+              className="contact-btn text-sm sm:text-base! px-3! py-2! sm:px-4! sm:py-2!"
             >
-              <i class="fi fi-rs-paper-plane"></i> Get in Touch
+              <i className="fi fi-rs-paper-plane"></i> Get in Touch
             </button>
           </div>
         </div>
 
         {/* ================= INFO SECTION ================= */}
         <div className="mt-10! px-6!">
-          {/* NAME */}
-          <section className="flex items-center gap-2">
-            <h1 className="text-4xl font-extrabold text-gray-400">
+          {/* NAME  -------------------------------->*/}
+          <section className="flex flex-wrap items-center gap-2">
+            <h1 className="text-2xl sm:text-4xl! font-extrabold text-gray-400">
               Surjan Thakur
             </h1>
-            <button className="work-status">
-              <span className="text-lg!">👻</span>
-            </button>
+            <button className="work-status scale-75 sm:scale-100!"></button>
           </section>
+
           {/* META */}
-          <section className="flex flex-row gap-4 text-lg">
+          <section className="flex flex-row gap-4 text-lg sm:text-lg!">
             <span>
               <i className="fi fi-rs-land-layer-location"></i>
               &nbsp;India
@@ -115,24 +114,27 @@ export default function HeroPage() {
               <div className="tooltip">Github</div>
             </Link>
           </section>
+
           {/* ABOUT ----------------------------------------------------------------->*/}
-          <section className="mt-4! p-4">
-            <h1 className="hero-title">
-              <span className="name"> Hi, I’m</span> —{" "}
+          <section className="mt-3! sm:mt-6! p-3! sm:p-6!">
+            <h1 className="hero-title text-2xl sm:text-4xl! leading-tight">
+              <span className="name">Hi, I’m</span> —{" "}
               <span className="muted">A Full Stack web developer.</span>
             </h1>
-            <p className="hero-subtitle">
+
+            <p className="hero-subtitle mt-3! text-sm! sm:text-base! leading-relaxed">
               <span className="text-white font-extrabold"> I build </span>{" "}
               efficient web apps using
-              <span className="badges">
-                <span className="badge">
+              <span className="badges flex flex-wrap gap-2 mt-2!">
+                <span className="badge flex items-center gap-1 px-2! py-1! text-xs! sm:text-sm!">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 30 30"
                     id="Fastapi-Icon--Streamline-Svg-Logos"
-                    height="24"
-                    width="24"
+                    height="16"
+                    width="16"
+                    className="sm:h-5 sm:w-5"
                   >
                     <path
                       fill="#009688"
@@ -148,8 +150,9 @@ export default function HeroPage() {
                     fill="none"
                     viewBox="0 0 24 24"
                     id="React--Streamline-Svg-Logos"
-                    height="24"
-                    width="24"
+                    height="16"
+                    width="16"
+                    className="sm:h-5 sm:w-5"
                   >
                     <path
                       fill="#00d8ff"
@@ -165,8 +168,9 @@ export default function HeroPage() {
                     fill="none"
                     viewBox="0 0 96 96"
                     id="Tailwindcss-Icon--Streamline-Svg-Logos"
-                    height="24"
-                    width="24"
+                    height="16"
+                    width="16"
+                    className="sm:h-5 sm:w-5"
                   >
                     <path
                       fill="url(#a)"
@@ -194,8 +198,9 @@ export default function HeroPage() {
                     fill="none"
                     viewBox="0 0 24 24"
                     id="Bun--Streamline-Svg-Logos"
-                    height="24"
-                    width="24"
+                    height="16"
+                    width="16"
+                    className="sm:h-5 sm:w-5"
                   >
                     <path
                       fill="#000000"
@@ -278,8 +283,9 @@ export default function HeroPage() {
                   fill="none"
                   viewBox="0 0 24 24"
                   id="Postgresql--Streamline-Svg-Logos"
-                  height="24"
-                  width="24"
+                  height="16"
+                  width="16"
+                  className="sm:h-5 sm:w-5"
                 >
                   <path
                     fill="#000000"

@@ -81,10 +81,10 @@
 }
 
 .hero-title {
-  font-size: clamp(2.4rem, 4vw, 4rem);
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
   font-weight: 700;
   letter-spacing: -0.02em;
-  margin-bottom: 32px;
+  margin-bottom: 20px;
 }
 
 .name {
@@ -105,7 +105,7 @@
 
 .badges {
   display: inline-flex;
-  gap: 10px;
+  gap: 16px;
   margin: 0 8px;
   flex-wrap: wrap;
 }
@@ -150,4 +150,53 @@
   opacity: 1;
   visibility: visible;
   top: -40px;
+}
+
+/* ================= MOBILE RESPONSIVENESS ================= */
+@media (max-width: 640px) {
+  .contact-btn {
+    border-radius: 40px;
+    font-size: 14px;
+  }
+
+  .work-status {
+    width: 140px;
+    height: 52px;
+    transform: translateY(4px);
+  }
+
+  .work-status span {
+    font-size: 12px;
+    letter-spacing: 2px;
+    top: 42%;
+  }
+
+  .work-status:after {
+    bottom: -10px;
+    height: 28px;
+    filter: blur(10px);
+  }
+
+  .icon-content .tooltip {
+    font-size: 12px;
+    padding: 3px 4px;
+  }
+
+  .hero-title {
+    letter-spacing: -0.3px;
+  }
+
+  .hero-subtitle {
+    line-height: 1.6;
+  }
+
+  .badges {
+    row-gap: 10px;
+  }
+
+  .badge {
+    border-radius: 999px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
 }
