@@ -40,7 +40,7 @@ export default function HeroPage() {
         <img
           src="https://i.pinimg.com/1200x/bd/90/a6/bd90a6c8ea07dc7390e461b655a8b1c6.jpg"
           alt="background"
-          className="h-full w-full object-cover opacity-15"
+          className="h-full w-full object-cover opacity-25"
         />
         {/* RANDOM QUOTE */}
         <div className="absolute bottom-18! left-4! right-4! mx-auto! max-w-2xl! text-center px-6! py-5!">
