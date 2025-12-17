@@ -282,8 +282,9 @@ export default function HeroPage() {
                 PostgreSQL
               </span>{" "}
               to build fast, <strong>and reliable web apps.</strong> and I’m
-              deeply interested in <strong>AI agents</strong> — and intelligent
-              systems
+              deeply interested in{" "}
+              <strong className="text-white">🤖AI agents</strong> — and
+              <strong className="text-white"> intelligent systems</strong>
             </p>
           </section>
         </div>
