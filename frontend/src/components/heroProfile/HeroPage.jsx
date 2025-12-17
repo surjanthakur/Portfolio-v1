@@ -6,6 +6,20 @@ import { StreakStatus, InfiniteScroll } from "../index";
 export default function HeroPage() {
   const [quotes, setQuotes] = useState([]);
 
+  // send mail
+  const openMail = () => {
+    const myEmail = "tsurjan506@gmail.com";
+    const subject = "Contact from Portfolio";
+    const body =
+      "Hi Surjan,\n\nI want to connect with you.\n\nPlease enter your email:";
+
+    const gmailURL = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
+      myEmail
+    )}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    window.open(gmailURL, "_blank");
+  };
+
   const url =
     "https://api.api-ninjas.com/v2/quotes?categories=success%2Cwisdom";
   const options = {
@@ -65,7 +79,10 @@ export default function HeroPage() {
 
           {/* CONTACT BUTTON */}
           <div className="flex justify-end mr-2! mt-2!">
-            <button className="contact-btn text-center px-2! py-2!">
+            <button
+              onClick={openMail}
+              className="contact-btn text-center px-2! py-2!"
+            >
               <i class="fi fi-rs-paper-plane"></i> Get in Touch
             </button>
           </div>
