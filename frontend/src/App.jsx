@@ -1,12 +1,12 @@
 import "./App.css";
-import { HeroPage, NavBar, Footer, Tooltip } from "./components/index";
+import { HeroPage, NavBar, Footer } from "./components/index";
 
 function App() {
   return (
     <>
       <div className="main-container">
         <HeroPage />
-        <Tooltip />
+        <NavBar />
         <Footer />
       </div>
     </>
