@@ -5,7 +5,7 @@ import {
   db,
   react,
   tailwind,
-  image3,
+  blueProfile,
 } from "../../../images/imgExport";
 import { StreakStatus, InfiniteScroll } from "../index";
 
@@ -129,7 +129,7 @@ export default function HeroPage() {
                 boxShadow: "0px 20px 40px rgba(0,0,0,0.4)",
               }}
               transition={{ type: "spring", stiffness: 260, damping: 18 }}
-              src={image3}
+              src={blueProfile}
               alt="profile"
               className="h-24 w-24 sm:h-36! sm:w-36! rounded-full border-4! border-black"
             />

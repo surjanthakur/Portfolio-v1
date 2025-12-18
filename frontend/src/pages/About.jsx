@@ -6,8 +6,8 @@ import {
   fastapi,
   python,
   bun,
-  image3,
   tailwind,
+  blueProfile,
 } from "../../images/imgExport";
 
 import { motion } from "motion/react";
@@ -84,7 +84,7 @@ export default function About() {
           }}
         >
           <motion.img
-            src={image3}
+            src={blueProfile}
             alt="profile"
             draggable={false}
             whileHover={{
