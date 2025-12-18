@@ -102,24 +102,24 @@ export default function HeroPage() {
           </section>
 
           {/* META */}
-          <section className="flex flex-row text-lg sm:text-lg!">
+          <section className="flex  text-lg sm:text-lg!">
             <span>
               <i className="fi fi-rs-land-layer-location"></i>
               &nbsp;India
             </span>
             <Link className="icon-content" to="https://x.com/tsurjan16">
-              <i className="fa-brands fa-x-twitter text-blue-400"></i>
+              <i className="fa-brands fa-x-twitter social-link"></i>
               <div className="tooltip">x</div>
             </Link>
             <Link className="icon-content" to="https://github.com/surjanthakur">
-              <i className="fa-brands fa-github text-blue-400"></i>
+              <i className="fa-brands fa-github social-link"></i>
               <div className="tooltip">Github</div>
             </Link>
             <Link
               className="icon-content"
               to="https://www.instagram.com/epicsurjanthakur/"
             >
-              <i class="fa-brands fa-instagram text-blue-400"></i>
+              <i class="fa-brands fa-instagram social-link"></i>
               <div className="tooltip">Instagram</div>
             </Link>
           </section>
