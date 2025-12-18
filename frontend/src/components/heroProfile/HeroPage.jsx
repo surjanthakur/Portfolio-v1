@@ -1,19 +1,44 @@
 import "./heropage.css";
-import profileImg from "../../../images/myimage.png";
-import { fastapi, bun, db, react, tailwind } from "../../../images/imgExport";
+import {
+  fastapi,
+  bun,
+  db,
+  react,
+  tailwind,
+  image3,
+} from "../../../images/imgExport";
 import { StreakStatus, InfiniteScroll } from "../index";
-import ScrollReveal from "./ScrollReveal";
 
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
+//  Animation Variants ------------------------>
+const container = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.15,
+    },
+  },
+};
+
 const fadeUp = {
-  hidden: { opacity: 0, y: 40 },
-  show: {
+  hidden: {
+    opacity: 0,
+    y: 28,
+    filter: "blur(6px)",
+  },
+  visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: "easeOut" },
+    filter: "blur(0px)",
+    transition: {
+      duration: 1,
+      ease: [0.22, 1, 0.36, 1],
+    },
   },
 };
 
@@ -64,46 +89,58 @@ export default function HeroPage() {
 
   return (
     <>
-      <div className="w-full">
+      <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-120px" }}
+        className="w-full"
+      >
         {/* TOP BACKGROUND  */}
-        <div className="relative h-56 w-full overflow-hidden">
-          <img
+        <motion.div
+          variants={fadeUp}
+          className="relative h-56 w-full overflow-hidden"
+        >
+          <motion.img
             src="https://i.pinimg.com/1200x/bd/90/a6/bd90a6c8ea07dc7390e461b655a8b1c6.jpg"
             alt="background"
             className="h-full w-full object-cover opacity-25"
           />
           {/* RANDOM QUOTE */}
-          <div className="absolute bottom-14! left-3! right-3! mx-auto max-w-2xl text-center px-3! py-3! sm:px-6! sm:py-5!">
+          <motion.div className="absolute bottom-14! left-3! right-3! mx-auto max-w-2xl text-center px-3! py-3! sm:px-6! sm:py-5!">
             <motion.p
               variants={fadeUp}
-              initial="hidden"
-              animate="show"
               className="text-base sm:text-lg! md:text-xl! font-serif italic text-gray-100 leading-relaxed"
             >
               {quotes?.quote}
             </motion.p>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* ================= PROFILE ROW ================= */}
         <div className="relative px-6!">
           {/* PROFILE IMAGE */}
           <div className="absolute -top-12! sm:-top-16! left-4 sm:left-6!">
             <motion.img
+              variants={fadeUp}
               whileHover={{
                 scale: 1.08,
                 rotate: 2,
                 boxShadow: "0px 20px 40px rgba(0,0,0,0.4)",
               }}
               transition={{ type: "spring", stiffness: 260, damping: 18 }}
-              src={profileImg}
+              src={image3}
               alt="profile"
               className="h-24 w-24 sm:h-36! sm:w-36! rounded-full border-4! border-black"
             />
           </div>
 
           {/* CONTACT BUTTON */}
-          <div className="flex justify-end mr-2! mt-2!">
+          <motion.div
+            variants={fadeUp}
+            div
+            className="flex justify-end mr-2! mt-2!"
+          >
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -112,105 +149,103 @@ export default function HeroPage() {
             >
               <i className="fi fi-rs-paper-plane"></i> Get in Touch
             </motion.button>
-          </div>
+          </motion.div>
         </div>
 
         {/* ================= INFO SECTION ================= */}
         <div className="mt-10! px-6!">
           {/* NAME  -------------------------------->*/}
-          <section className="flex flex-wrap items-center gap-2">
-            <ScrollReveal>
-              <h1 className="text-2xl sm:text-4xl! font-extrabold text-gray-400">
-                Surjan Thakur
-              </h1>
-            </ScrollReveal>
+          <motion.section
+            variants={fadeUp}
+            className="flex flex-wrap items-center gap-2"
+          >
+            <motion.h1 className="text-2xl sm:text-4xl! font-extrabold text-gray-400">
+              Surjan Thakur
+            </motion.h1>
+
             <motion.button
               whileHover={{ scale: 1.5 }}
               className="work-status scale-75 sm:scale-100!"
             ></motion.button>
-          </section>
+          </motion.section>
 
           {/* META */}
-          <ScrollReveal delay={0.1}>
-            <section className="flex  text-lg sm:text-lg!">
-              <span>
-                <i className="fi fi-rs-land-layer-location"></i>
-                &nbsp;India
-              </span>
-              <Link className="icon-content" to="https://x.com/tsurjan16">
-                <i className="fa-brands fa-x-twitter social-link"></i>
-                <div className="tooltip">x</div>
-              </Link>
-              <Link
-                className="icon-content"
-                to="https://github.com/surjanthakur"
-              >
-                <i className="fa-brands fa-github social-link"></i>
-                <div className="tooltip">Github</div>
-              </Link>
-              <Link
-                className="icon-content"
-                to="https://www.instagram.com/epicsurjanthakur/"
-              >
-                <i class="fa-brands fa-instagram social-link"></i>
-                <div className="tooltip">Instagram</div>
-              </Link>
-            </section>
-          </ScrollReveal>
+
+          <motion.section
+            variants={fadeUp}
+            className="flex  text-lg sm:text-lg!"
+          >
+            <span>
+              <i className="fi fi-rs-land-layer-location"></i>
+              &nbsp;India
+            </span>
+            <Link className="icon-content" to="https://x.com/tsurjan16">
+              <i className="fa-brands fa-x-twitter social-link"></i>
+              <div className="tooltip">x</div>
+            </Link>
+            <Link className="icon-content" to="https://github.com/surjanthakur">
+              <i className="fa-brands fa-github social-link"></i>
+              <div className="tooltip">Github</div>
+            </Link>
+            <Link
+              className="icon-content"
+              to="https://www.instagram.com/epicsurjanthakur/"
+            >
+              <i class="fa-brands fa-instagram social-link"></i>
+              <div className="tooltip">Instagram</div>
+            </Link>
+          </motion.section>
 
           {/* ABOUT ----------------------------------------------------------------->*/}
-          <ScrollReveal delay={0.2}>
-            <section className="mt-3! sm:mt-6! p-3! sm:p-6!">
-              <h1 className="hero-title text-2xl sm:text-4xl! leading-tight">
-                <span className="name">Hi, I’m</span> —{" "}
-                <span className="muted">A Full Stack web developer.</span>
-              </h1>
 
-              <p className="hero-subtitle mt-3! text-sm! sm:text-base! leading-relaxed">
-                <span className="text-white font-extrabold"> I build </span>{" "}
-                efficient web apps using
-                <span className="badges flex flex-wrap gap-2 mt-2!">
-                  <span className="badge flex items-center gap-1 px-2! py-1! text-xs! sm:text-sm!">
-                    <img className="h-5 w-5" src={fastapi} alt="fastapi"></img>
-                    Fastapi
-                  </span>
+          <motion.section
+            variants={fadeUp}
+            className="mt-3! sm:mt-6! p-3! sm:p-6!"
+          >
+            <h1 className="hero-title text-2xl sm:text-4xl! leading-tight">
+              <span className="name">Hi, I’m</span> —{" "}
+              <span className="muted">A Full Stack web developer.</span>
+            </h1>
 
-                  <span className="badge">
-                    {" "}
-                    <img className="h-5 w-5" src={react} alt="react"></img>React
-                  </span>
-
-                  <span className="badge">
-                    <img
-                      className="h-5 w-5"
-                      src={tailwind}
-                      alt="tailwind"
-                    ></img>
-                    Tailwind
-                  </span>
-                  <span className="badge">
-                    {" "}
-                    <img className="h-5 w-5" src={bun} alt="bun"></img>Bun
-                  </span>
+            <p className="hero-subtitle mt-3! text-sm! sm:text-base! leading-relaxed">
+              <span className="text-white font-extrabold"> I build </span>{" "}
+              efficient web apps using
+              <span className="badges flex flex-wrap gap-2 mt-2!">
+                <span className="badge flex items-center gap-1 px-2! py-1! text-xs! sm:text-sm!">
+                  <img className="h-5 w-5" src={fastapi} alt="fastapi"></img>
+                  Fastapi
                 </span>
-                and{" "}
+
                 <span className="badge">
-                  <img className="h-5 w-5" src={db} alt="db"></img>Bun
-                  PostgreSQL
-                </span>{" "}
-                to build fast, <strong>and reliable web apps.</strong> and I’m
-                deeply interested in{" "}
-                <strong className="text-white">🤖AI agents</strong> — and
-                <strong className="text-white"> intelligent systems</strong>
-              </p>
-            </section>
-          </ScrollReveal>
+                  {" "}
+                  <img className="h-5 w-5" src={react} alt="react"></img>React
+                </span>
+
+                <span className="badge">
+                  <img className="h-5 w-5" src={tailwind} alt="tailwind"></img>
+                  Tailwind
+                </span>
+                <span className="badge">
+                  {" "}
+                  <img className="h-5 w-5" src={bun} alt="bun"></img>Bun
+                </span>
+              </span>
+              and{" "}
+              <span className="badge">
+                <img className="h-5 w-5" src={db} alt="db"></img>Bun PostgreSQL
+              </span>{" "}
+              to build fast, <strong>and reliable web apps.</strong> and I’m
+              deeply interested in{" "}
+              <strong className="text-white">🤖AI agents</strong> — and
+              <strong className="text-white"> intelligent systems</strong>
+            </p>
+          </motion.section>
         </div>
         {/* github contributions */}
         <StreakStatus />
         {/* infinite tech stack scroll */}
         <InfiniteScroll />
-      </div>
+      </motion.div>
     </>
   );
 }
