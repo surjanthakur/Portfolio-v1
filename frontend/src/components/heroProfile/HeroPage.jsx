@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
-import profileImg from "../../../images/myimage.png";
 import "./heropage.css";
+import profileImg from "../../../images/myimage.png";
+import { fastapi, bun, db, react, tailwind } from "../../../images/imgExport";
 import { StreakStatus, InfiniteScroll } from "../index";
+
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { fastapi, bun, db, react } from "../../../images/imgExport";
 
 export default function HeroPage() {
   const [quotes, setQuotes] = useState([]);
@@ -145,7 +146,7 @@ export default function HeroPage() {
                 </span>
 
                 <span className="badge">
-                  <img className="h-5 w-5" src={fastapi} alt="tailwind"></img>
+                  <img className="h-5 w-5" src={tailwind} alt="tailwind"></img>
                   Tailwind
                 </span>
                 <span className="badge">

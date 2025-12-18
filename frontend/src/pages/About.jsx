@@ -8,6 +8,7 @@ import {
   python,
   bun,
   image3,
+  tailwind,
 } from "../../images/imgExport";
 
 export default function About() {
@@ -66,6 +67,10 @@ export default function About() {
               <div className="icon-content">
                 <img src={python} alt="python" />
                 <div className="tooltip">Python</div>
+              </div>
+              <div className="icon-content">
+                <img src={tailwind} alt="python" />
+                <div className="tooltip">Tailwind</div>
               </div>
             </div>
           </div>
