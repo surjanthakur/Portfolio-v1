@@ -1,4 +1,5 @@
 import "./infinite.css";
+import { motion } from "motion/react";
 
 const techStack = [
   "HTML",
@@ -20,16 +21,64 @@ const techStack = [
   "LangGraph",
 ];
 
+/* -----------------------------
+   Motion Variants
+----------------------------- */
+
+const trackReveal = {
+  hidden: {
+    opacity: 0,
+    y: 24,
+    filter: "blur(6px)",
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: {
+      duration: 2,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
+
+const cardHover = {
+  rest: {
+    scale: 1,
+    y: 0,
+  },
+  hover: {
+    scale: 1.08,
+    y: -6,
+    transition: {
+      duration: 0.25,
+      ease: "easeOut",
+    },
+  },
+};
+
 export default function InfiniteScroll() {
   return (
     <section className="infinite-container" aria-label="Tech stack">
-      <div className="infinite-track">
+      <motion.div
+        className="infinite-track"
+        variants={trackReveal}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-80px" }} // scroll-trigger
+      >
         {[...techStack, ...techStack].map((tech, index) => (
-          <div key={index} className="card tech-btn">
+          <motion.div
+            key={index}
+            className="card tech-btn"
+            variants={cardHover}
+            initial="rest"
+            whileHover="hover"
+          >
             {tech}
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

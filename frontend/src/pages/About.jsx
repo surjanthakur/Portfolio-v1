@@ -1,4 +1,3 @@
-// import myImage from "../../images/myimage.png";
 import "./about.css";
 import {
   react,
@@ -11,71 +10,149 @@ import {
   tailwind,
 } from "../../images/imgExport";
 
+import { motion } from "motion/react";
+
+//  Animation Variants ------------------------>
+const container = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.15,
+    },
+  },
+};
+
+const fadeUp = {
+  hidden: {
+    opacity: 0,
+    y: 28,
+    filter: "blur(6px)",
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: {
+      duration: 2,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
+
+const imageReveal = {
+  hidden: {
+    opacity: 0,
+    scale: 0.92,
+    y: 20,
+    filter: "blur(6px)",
+  },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: {
+      duration: 2,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
+
 export default function About() {
   return (
     <section className="about">
-      <div className="about-container">
+      <motion.div
+        className="about-container"
+        variants={container}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }} // scroll-trigger
+      >
         {/* IMAGE */}
-        <div className="image-section">
-          <img src={image3} alt="profile" />
-        </div>
+        <motion.div
+          className="image-section"
+          variants={imageReveal}
+          whileHover={{
+            scale: 1.03,
+            rotate: 0.4,
+            transition: {
+              duration: 0.35,
+              ease: "easeOut",
+            },
+          }}
+        >
+          <motion.img
+            src={image3}
+            alt="profile"
+            draggable={false}
+            whileHover={{
+              scale: 1.06,
+            }}
+            transition={{ duration: 0.35, ease: "easeOut" }}
+          />
+        </motion.div>
 
         {/* DETAILS */}
-        <div className="details">
-          <span className="about-label">About</span>
-          <h2 className="about-title">Me</h2>
+        <motion.div className="details" variants={container}>
+          <motion.span className="about-label" variants={fadeUp}>
+            About
+          </motion.span>
 
-          <h1 className="name">
-            <span className="text-gray-400">👋🏻 hy i'm </span>Surjan Thakur
-          </h1>
+          <motion.h2 className="about-title" variants={fadeUp}>
+            Me
+          </motion.h2>
 
-          <p className="description">
+          <motion.h1 className="name" variants={fadeUp}>
+            <span className="text-gray-400">👋🏻 hy i'm </span>
+            Surjan Thakur
+          </motion.h1>
+
+          <motion.p className="description" variants={fadeUp}>
             I'm a Full Stack web developer and Open Source Contributor. I enjoy
             building products that solve real-world problems and specialize in
             crafting MVPs that ship fast and scale clean.
-          </p>
+          </motion.p>
 
-          <div className="skills">
+          {/* SKILLS */}
+          <motion.div className="skills" variants={fadeUp}>
             <h3>Skills</h3>
 
-            <div className="skills-icons">
-              <div className="icon-content">
-                <img src={react} alt="React" />
-                <div className="tooltip">React</div>
-              </div>
-
-              <div className="icon-content">
-                <img src={fastapi} alt="FastAPI" />
-                <div className="tooltip">Fastapi</div>
-              </div>
-
-              <div className="icon-content">
-                <img src={db} alt="Database" />
-                <div className="tooltip">PostgreSql</div>
-              </div>
-
-              <div className="icon-content">
-                <img src={bun} alt="Bun" />
-                <div className="tooltip">Bun</div>
-              </div>
-
-              <div className="icon-content">
-                <img src={js} alt="js" />
-                <div className="tooltip">JavaScript</div>
-              </div>
-
-              <div className="icon-content">
-                <img src={python} alt="python" />
-                <div className="tooltip">Python</div>
-              </div>
-              <div className="icon-content">
-                <img src={tailwind} alt="python" />
-                <div className="tooltip">Tailwind</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+            <motion.div
+              className="skills-icons"
+              variants={container}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              {[
+                { img: react, name: "React" },
+                { img: fastapi, name: "FastAPI" },
+                { img: db, name: "PostgreSql" },
+                { img: bun, name: "Bun" },
+                { img: js, name: "JavaScript" },
+                { img: python, name: "Python" },
+                { img: tailwind, name: "Tailwind" },
+              ].map((skill, i) => (
+                <motion.div
+                  key={i}
+                  className="icon-content"
+                  variants={fadeUp}
+                  whileHover={{
+                    y: -6,
+                    scale: 1.08,
+                  }}
+                  transition={{ duration: 0.25, ease: "easeOut" }}
+                >
+                  <img src={skill.img} alt={skill.name} />
+                  <div className="tooltip">{skill.name}</div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </motion.div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }
