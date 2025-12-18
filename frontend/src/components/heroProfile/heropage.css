@@ -137,8 +137,8 @@
   transform: translateX(-50%);
   background-color: #ffffff; /* White background */
   color: #000000; /* Black text */
-  padding: 4px 5px;
-  border-radius: 5px;
+  padding: 5px 12px;
+  border-radius: 10px;
   opacity: 0;
   visibility: hidden;
   font-size: 14px;

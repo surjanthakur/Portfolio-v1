@@ -100,7 +100,7 @@ export default function HeroPage() {
           </section>
 
           {/* META */}
-          <section className="flex flex-row gap-4 text-lg sm:text-lg!">
+          <section className="flex flex-row gap-2! text-lg sm:text-lg!">
             <span>
               <i className="fi fi-rs-land-layer-location"></i>
               &nbsp;India
