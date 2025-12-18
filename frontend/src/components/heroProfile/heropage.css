@@ -117,7 +117,7 @@
   padding: 6px 12px;
   font-size: 0.85rem;
   color: #eaeaea;
-  background: linear-gradient(180deg, #000000, #303030);
+  background-color: #373636d3;
   border: 1px dashed #ffffff;
   border-radius: 10px;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
@@ -127,7 +127,6 @@
 /* tool tip */
 .icon-content {
   position: relative;
-  font-weight: bolder;
 }
 
 .icon-content .tooltip {
