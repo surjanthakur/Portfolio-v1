@@ -8,7 +8,7 @@ import About from "./pages/About";
 function App() {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.1, // smooth but not floaty
+      duration: 1, // smooth but not floaty
       easing: t => 1 - Math.pow(1 - t, 4), // buttery ease-out
       smoothWheel: true,
       smoothTouch: false, // touch users hate fake inertia
