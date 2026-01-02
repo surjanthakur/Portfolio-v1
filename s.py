@@ -1,3 +1,5 @@
-x = lambda num: num**3
+def nums(*args):
+    return sum(args)
 
-print(x(4))
+
+print(nums(1, 2, 3, 3, 1))
