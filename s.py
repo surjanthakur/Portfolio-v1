@@ -1,6 +1,9 @@
-# print patterns using loops
+word = "programming"
+count = {}
 
-for num in range(1, 2):
-    for i in range(1, 10):
-        for j in range(1, i + 1):
-            print("*", end=" ")
+for w in word:
+    if w in count:
+        count[w] += 1
+    else:
+        count[w] = 1
+print(count)
