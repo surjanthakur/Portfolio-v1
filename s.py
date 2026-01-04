@@ -1,16 +1,11 @@
-# decorators in python practice
-def toll(func):
-    def wrapper(*args):
-        print("-" * 10)
-        func(*args)
-        print("-" * 10)
+# recursion function are those functions who calls itself ok .
 
-    return wrapper
-
-
-@toll
-def greet(s):
-    print(s)
+# def multi(a, b):
+#     result = 0
+#     #* call itself
+#     for _ in range(1, b + 1):
+#         result += a
+#     print(result)
 
 
-greet("hy world")
+# multi(3, 2)
