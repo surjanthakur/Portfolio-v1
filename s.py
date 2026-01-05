@@ -1,11 +1,28 @@
-# recursion function are those functions who calls itself ok .
+class AtmMachine:
+    def __init__(self):
+        self.pin = ""
+        self.balance = 0
 
-# def multi(a, b):
-#     result = 0
-#     #* call itself
-#     for _ in range(1, b + 1):
-#         result += a
-#     print(result)
+    def menu(self):
+        user_input = input(
+            """ 
+                           hello would you like to process?
+                           press 1 to create pin
+                           press 2 to view balance
+                           press 3 to add balance
+                           press 4 to exit
+                           """
+        )
+        if user_input == "1":
+            print("create pin")
+        elif user_input == "2":
+            print("view balance")
+        elif user_input == "3":
+            print("add balance")
+        elif user_input == "4":
+            print("exit")
 
 
-# multi(3, 2)
+sbi = AtmMachine()
+
+print(sbi.menu())
